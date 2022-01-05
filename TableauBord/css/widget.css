@@ -1,0 +1,120 @@
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*                    LED CSS                          */
+
+#led{
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    background-color: #F00;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+    transition: 0.5s;
+    float: right;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*                  BATTERY CSS                        */
+#Batterie{
+    position: relative;
+    width: 80%;
+    height: 100px;
+    border: black 3px solid;
+    border-radius: 10px;
+
+}
+
+#BatterieLevel{
+    position: absolute;
+    background-color: black;
+    border-radius: 10px;
+    width: 0%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+#BoutDeCriss{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*                  CONSOLE CSS                        */
+
+#console{
+    background-color: #272725;
+    height: 100px;
+    border-radius: 5px;
+    height: 100%;
+    overflow-y: scroll;
+    padding-left: 10px;
+}
+
+#console p{
+    margin: 10px 0 10px;
+    font-size: 15px;
+}
+
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*                  MOTORS CSS                         */
+
+#motorContainer{
+    display: grid;
+    box-sizing: border-box;
+    margin: auto;
+    grid-template-columns: repeat(3, calc(30%));
+    grid-template-rows: repeat(3, 30%);
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+/*------------------------------------------*/
+/*ARROW POS */
+#frontright{
+    transform: rotate(45deg);
+}
+
+#right{
+    transform: rotate(90deg);
+}
+
+#backright{
+    transform: rotate(135deg);
+}
+
+#back{
+    transform: rotate(180deg);
+}
+
+#backleft{
+    transform: rotate(-135deg);
+}
+
+#left{
+    transform: rotate(-90deg);
+}
+
+#frontleft{
+    transform: rotate(-45deg);
+}
+
+
+
+.arrow img{
+    width: 50px;
+    transition: 0.3s;
+    
+}
+
+#tank img{
+    width: 100%;
+}
+
+
+

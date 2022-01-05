@@ -1,0 +1,8 @@
+- Status
+- Client ip addresse
+- controller
+- Batterie
+- output motor A, B, C, D
+- Direction
+
+

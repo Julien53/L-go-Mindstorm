@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Control</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <div id="title">
+            <h1 class="letterAnimation">Tank Controller</h1>
+        </div>
+        <div id="container">
+            <div id="StatusMenu">
+                <h1>Status</h1>
+                <p id="coStatus">Connection Status: <span id="ConnStatus" class="connected"></span></p>
+                <p id="coImageStatus">Image Socket Status: <span id="imageStatus" class="disconnected"></span></p>
+                <p id="coTankStatus">Command Socket Status: <span id="commandStatus" class="disconnected"></span></p>
+                <p >Controller: <span style="color: yellow;">Keyboard</span></p>
+            </div>
+
+            <div id="soundMenuRight">
+                <h1>Sounds</h1>
+                <div id="soundContainer">
+                    
+                    
+                    <button type="button" class="soundbtn" id="soundbtn1" onclick="CmdThread.postMessage('[S]' + this.innerHTML);">Dog bark 1</button>
+                    <button type="button" class="soundbtn" id="soundbtn2" onclick="CmdThread.postMessage('[S]' + this.innerHTML);">Dog bark 2</button>
+                    <button type="button" class="soundbtn" id="soundbtn3" onclick="CmdThread.postMessage('[S]' + this.innerHTML);">Dog growl</button>
+                    <button type="button" class="soundbtn" id="soundbtn4" onclick="CmdThread.postMessage('[S]' + this.innerHTML);">Okey-dokey</button>
+                    
+                    <div id="voicegroup">
+                        <p id="voicelabel">Send custom voice:  </p>
+                        <input id="lang" type="text" onkeyup="if (event.keyCode == 13) { ID('voice').focus(); }" maxlength="2" value="en" />
+                        <input id="voice" type="text" onkeyup="if (event.keyCode == 13) { ID('voicebtn').click(); }" />
+                        <button id="voicebtn" type="button" class="soundbtn" onclick="sendVoice();">Send</button>
+                    </div>
+
+                    <p id="streamContainer"><span id="streamText">Live microphone stream</span><audio id="stream" controls></audio></p>
+                    
+                </div>
+            </div>
+
+            <div id="mainMenu">
+                <div class="frame" id="cameraViewFrame"> <img id="img" src="img/noConnectionDark.gif" ondblclick="resizeImg(this)" /></div>
+
+                <div id="consoleContainer">
+
+                    <div class="consoleBlock">
+                        <h4 class="consoleTitle">Image Socket Console</h4>
+                        <div class="frame console" id="Iconsole"></div>
+                    </div>
+                    
+                    <div class="consoleBlock">
+                        <h4 class="consoleTitle">Command Socket Console</h4>
+                        <div class="frame console" id="Cconsole"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
+
+        <script src="js/lib.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/Controller.js"></script>
+    </body>
+</html>

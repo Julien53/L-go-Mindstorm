@@ -1,0 +1,99 @@
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*                  GLOBAL CSS                         */
+
+
+
+body {
+    font-family: 'M PLUS 1 Code', sans-serif;
+    background-color: #2d2d2a;
+    color: rgb(247, 243, 227);
+    font-size: 1vw;
+}
+
+h1{
+    margin: 0;
+    height: 50px;
+}
+
+#title{
+    text-align: center;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*                  GRID SETTING                       */
+#container {
+    box-sizing: border-box;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    height: 100vh;
+    padding: 20px;
+    grid-template-columns: repeat(6, calc(100%/6));
+    grid-template-rows: repeat(5, 17%);
+    grid-gap: 20px;
+    justify-content: center;
+  }
+  
+  .box {
+    background-color: #444;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  #boxStatus{
+      grid-column:  1/3;
+  }
+
+  #boxClient{
+      grid-column: 3/5;
+  }
+  #boxController{
+      grid-column: 5/7;
+  }
+
+  #boxBatterie{
+      grid-column: 1/ 3;
+  }
+  #boxControl{
+    grid-column: 3/7;
+
+  }
+  #boxMotor{
+      grid-column: 1/7;
+  }
+
+.col1{
+    grid-row: 1/2;
+}
+.col2{
+    grid-row: 2/4;
+}
+.col3{
+    grid-row: 4/7;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*                  CONSOLE BOX                        */
+
+#boxControl{
+    display: flex;
+    align-items: stretch;
+}
+
+#consoleTitle{
+    width: 30%;
+}
+
+#consoleContainer{
+    width: 70%;
+}
+
+/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
+/*                  MOTOR BOX                        */
+
+
+

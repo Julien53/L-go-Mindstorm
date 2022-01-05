@@ -1,0 +1,298 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #2d2d2a;
+    color: rgb(247, 243, 227);
+}
+
+#title{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#StatusMenu{
+    float: left;
+    margin-left: 50px;
+    text-align: left;
+}
+
+
+
+#mainMenu{
+    margin: auto;
+    max-width: 800px;
+    min-width: 500px;
+    width: 40%;
+}
+
+#cameraViewFrame{
+    margin-bottom: 50px;
+    width:100%;
+    height: 400px;
+    background-color: #4c4c47;
+    box-sizing: content-box;
+    border-radius: 10px;
+}
+
+#cameraViewFrame img{
+    width: 100%;
+    height: 100%;
+}
+
+#consoleContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.consoleBlock{
+    box-sizing: content-box;
+    width: 45%;
+}
+
+.console{
+    text-align: left;
+    height: 200px;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-color: #a1a4a5 #3b3b3b;
+    background-color: rgb(20, 20, 20);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.consoleTitle{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    background-color: #848fa5;
+    box-sizing: content-box;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.frame{
+    border: 5px #848fa5 solid;
+    padding: 5px;
+}
+
+.framefullscreen {
+    border: 5px #848fa5 solid;
+    padding: 5px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw !important;
+    height: 100vh !important;
+    box-sizing: border-box !important;
+}
+
+
+.disconnected {
+    color: red;
+}
+
+.halfconn {
+    color: yellow;
+}
+
+.connected {
+    color: green;
+}
+
+#soundMenuRight {
+    float: right;
+    margin-right: 50px;
+}
+
+#soundMenuRight #soundContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(4, 50px);
+    grid-gap: 20px;
+}
+
+#voicegroup {
+    text-align: center;
+}
+
+#lang {
+    width: 20px;
+    text-align: center;
+}
+
+#soundMenuRight #voicegroup {
+    grid-column: 1 / 5;
+}
+
+#soundMenuRight #voicelabel {
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: 0;
+    margin-bottom: 5px;
+    width: 200px;
+}
+
+#soundMenuRight #voicebtn {
+    padding: 5px 10px;
+}
+
+#soundMenuRight #voicebtn {
+    grid-column: 1 / 5;
+}
+
+#soundMenuRight  #soundbtn1 {
+    grid-column: 1 / 3;
+}
+
+#soundMenuRight  #soundbtn2 {
+    grid-column: 3 / 5;
+}
+
+#soundMenuRight  #soundbtn3 {
+    grid-column: 1 / 3;
+}
+
+#soundMenuRight  #soundbtn4 {
+    grid-column: 3 / 5;
+}
+
+#soundMenuRight #streamContainer {
+    text-align: center;
+    grid-column: 1 / 5;
+}
+
+#soundMenuRight #stream {
+    margin-top: 10px;
+}
+
+#soundMenuBottom #soundContainer {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(2, 30px);
+    grid-gap: 20px;
+}
+
+#soundMenuBottom #voicegroup {
+    grid-column: 1 / 5;
+    padding-top: 5px;
+}
+
+#soundMenuBottom #voicelabel {
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: 0;
+    margin-bottom: 5px;
+    width: 200px;
+}
+
+#soundMenuBottom #voicebtn {
+    padding: 5px 10px;
+}
+
+#soundMenuBottom #voicebtn {
+    grid-column: 1 / 5;
+}
+
+#soundMenuBottom  #soundbtn1 {
+    grid-column: 1 / 3;
+}
+
+#soundMenuBottom  #soundbtn2 {
+    grid-column: 3 / 5;
+}
+
+#soundMenuBottom  #soundbtn3 {
+    grid-column: 5 / 7;
+}
+
+#soundMenuBottom  #soundbtn4 {
+    grid-column: 7 / 9;
+}
+
+#soundMenuBottom #streamContainer {
+    text-align: center;
+    grid-row: 1 / 2;
+    grid-column: 5 / 9;
+    margin: 0px !important;
+
+}
+
+#soundMenuBottom #streamText {
+    display: none;
+}
+#soundMenuBottom h1 {
+    display: none;
+}
+#soundMenuBottom #voicelabel {
+    display: none;
+}
+#soundMenuBottom #voicegroup {
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+}
+
+
+#soundMenuBottom {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%);
+    z-index: 100;
+}
+
+.soundbtn {
+    font-size: large;
+    color: white;
+    cursor: pointer;
+    background-color: green;
+    
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+
+.soundbtn:hover {
+    background-color: darkgreen;
+    color: lightgray;
+    transition: all 0.3s;
+}
+
+#soundMenuBottom #voicebtn {
+    padding: 5px 10px;
+}
+
+.letterAnimation{
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 300px;
+    animation: type 3s steps(60, end); 
+  }
+  
+  @keyframes type{ 
+    from { width: 0px; } 
+  }
+  
+  
+  .letterAnimationfade{
+    opacity: 1;
+    margin-left: 0;
+    white-space: nowrap;
+    animation: fade 1s steps(60, end);
+  }
+
+  @keyframes fade{ 
+    from { margin-left: 30px; opacity: 0; } 
+  }
