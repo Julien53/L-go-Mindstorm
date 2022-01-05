@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
+	</head>
+
+	<body>
+		<h1>sound test</h1>
+		<div>
+			<video id="nostream" controls></video>
+			<audio id="stream" controls></audio>
+		</div>
+		<script>
+			var isStarted = false;
+			var streamer = document.getElementById('stream');
+			streamer.onplay = startStream;
+
+			function startStream() {
+				if (!isStarted) {
+					if(Hls.isSupported()) {
+						var hls = new Hls();
+						hls.loadSource('/stream/stream.m3u8');
+						hls.attachMedia(streamer);
+						hls.on(Hls.Events.MANIFEST_PARSED,function() {
+							streamer.play();
+						});
+					} else if (streamer.canPlayType('application/vnd.apple.mpegurl')) {
+						streamer.src = '/stream/stream.m3u8';
+						streamer.addEventListener('loadedmetadata',function() {
+							streamer.play();
+						});
+					}
+					//setInterval(function() { if ( streamer.currentTime < streamer.duration - 1.5) { streamer.currentTime = streamer.duration; } })
+					isStarted = true;
+				}
+			}
+			
+
+			// function playNext(obj) {
+			// 	console.log(obj);
+			// 	if ((o = obj.nextElementSibling) != null) { o.play(); };
+			// 	obj.remove();
+			// }
+
+			// document.getElementById('stream').firstElementChild.play();
+
+			// var audio = new Audio('/a.mp3'); // the above
+			// audio.play();
+		</script>
+	</body>
+	
+	<!-- 
+		video	
+		
+			./ffmpeg -listen 1 -i video="Microsoft® LifeCam Studio(TM)" -c:v libx264 -crf 21 -preset veryfast -c:a aac -b:a 128k -ac 2 -f hls -hls_time 4 -hls_playlist_type event stream.m3u8
+	
+		audio
+	
+			./ffmpeg -f dshow -i audio="Microphone de bureau (Microsoft® LifeCam Studio(TM))" -c:v libx264 -acodec mp4 -crf 1 -preset veryfast -c:a aac -b:a 128k -f hls -segment_time 0.5 -hls_time 0.5 -hls_playlist_type event 'C:\MAMP\htdocs\stream\stream.m3u8'
+
+	-->
+</html>

@@ -1,0 +1,9 @@
+// List devices
+	./ffmpeg -list_devices true -f dshow -i dummy
+
+// Video stream
+	./ffmpeg -f dshow -i video="Microsoft® LifeCam Studio(TM)" -c:v libx264 -crf 21 -preset veryfast -c:a aac -b:a 128k -ac 2 -f hls -hls_time 4 -hls_playlist_type event '/path/to/file/stream.m3u8'
+
+// Audio stream
+	
+	./ffmpeg -f dshow -i audio="Microphone de bureau (Microsoft® LifeCam Studio(TM))" -c:v libx264 -acodec mp4 -crf 21 -preset veryfast -c:a aac -b:a 128k -f hls -segment_time 0.5 -hls_time 0.5 -hls_playlist_type event '/path/to/file/stream.m3u8'

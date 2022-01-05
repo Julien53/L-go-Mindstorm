@@ -1,0 +1,8 @@
+gtts
+pynput
+ev3_dc
+mfrc522
+asyncio
+digi-xbee
+websockets
+opencv-python

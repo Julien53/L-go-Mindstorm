@@ -1,0 +1,10 @@
+// Move
+http://ev3.fantastic.computer/doxygen/directcommands.html
+https://ev3-dc.readthedocs.io/en/latest/examples_ev3.html#moving-motors
+https://www.lego.com/cdn/cs/set/assets/blt6879b00ae6951482/LEGO_MINDSTORMS_EV3_Communication_Developer_Kit.pdf
+
+// Speak
+https://ev3-dc.readthedocs.io/en/latest/examples_sound.html#play-a-local-sound-file
+https://tiebing.blogspot.com/2019/09/lego-ev3-sound-file-rsf-format.html
+https://github.com/kkroening/ffmpeg-python
+https://gtts.readthedocs.io/en/latest/module.html
